@@ -15,7 +15,9 @@ export function Video(props: VideoProps) {
         variables: {
             slug: props.lessonSlug,
         }
+        
     })
+    
 
     console.log(data)
 

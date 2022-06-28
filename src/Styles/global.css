@@ -148,4 +148,31 @@ body {
         display: grid;
         grid-template-columns: auto
     }
+    .flex {
+        display: flex;
+        flex-direction: column;
+        align-content: stretch;
+        justify-content: space-around;
+        align-items: stretch;
+    }
+    .leading-tight {
+        line-height: 1.25;
+        text-align: center;
+    }
+    .text-\[2\.5rem\] {
+        font-size: 2rem;
+    }
+    .mt-4 {
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .leading-relaxed {
+        padding: 2rem;
+    }
+
 }
