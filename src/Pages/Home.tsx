@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Logo } from "../Components/Logo";
 import { useCreateSubscriberMutation } from "../graphql/generated";
 
+
 export function Home() {
     const navigate = useNavigate();
 
@@ -21,7 +22,7 @@ export function Home() {
             }
         })
         
-        navigate(`/event/`)
+        navigate(`/event/lesson/live-encerramento`)
     }
 
     
