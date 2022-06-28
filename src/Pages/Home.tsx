@@ -3,13 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Logo } from "../Components/Logo";
 import { useCreateSubscriberMutation } from "../graphql/generated";
 
-interface LessonProps {
-    slug: string;
-    availableAt: Date;
-}
-
-
-export function Home(props: LessonProps) {
+export function Home() {
     const navigate = useNavigate();
 
     const [name, setName] = useState('');
@@ -27,7 +21,7 @@ export function Home(props: LessonProps) {
             }
         })
         
-        navigate(`/event/lesson/${props.slug}`)
+        navigate(`/event/`)
     }
 
     
