@@ -22,7 +22,7 @@ export function Home() {
             }
         })
         
-        navigate(`/event/lesson/live-encerramento`)
+        navigate(`/event/lesson/react-crud`)
     }
 
     
