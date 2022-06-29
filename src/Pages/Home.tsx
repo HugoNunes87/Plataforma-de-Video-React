@@ -8,7 +8,6 @@ export function Home() {
     const navigate = useNavigate();
 
     const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
 
     const [createSubscribe, { loading }] = useCreateSubscriberMutation()
 
@@ -18,7 +17,6 @@ export function Home() {
         await createSubscribe({
             variables: {
                 name,
-                email,
             }
         })
         
@@ -30,47 +28,32 @@ export function Home() {
         <div className="flex flex-col min-h-screen bg-blur bg-cover bg-no-repeat items-center">
             <div className="w-full max-w-[1100px] flex items-center justify-between mt-20 mx-auto home">
                 <div className="max-w-[640px] logo">
-                    <Logo />
-
-                    <h1 className="mt-8 text-[2.5rem] leading-tight title">
-                        Construa uma <strong className="text-blue-500 ">aplicação completa</strong>, do zero, com <strong className="text-blue-500">React</strong>
+                    <Logo/>
+                    <h1 className="mt-8 text-[2.4rem] leading-tight title">
+                        Bem-Vindo(a) ao meu portifólio com videos de projetos finalizados e em andamento
                     </h1>
-                    <p className="mt-4 text-gray-200 leading-relaxed subtitle" >
-                        Em apenas uma semana você vai dominar na prática uma das tecnologias mais utilizadas e com alta demanda para acessar as melhores oportunidades do mercado.
-                    </p>
                 </div>
-                <div className="p-8 bg-gray-700 border-gray-500 rounded">
+                <div className="max-w-[400px] p-8 bg-gray-700 border-gray-500 rounded form">
                     <strong className="text-2xl mb-6 block">
-                        Escreva-se gratuitamente
+                    Olá! Para continuar, digite o seu Nome
                     </strong>
 
                     <form onSubmit={handleSubscribe} className="flex flex-col gap-2 w-full">
                         <input
-                            className="bg-gray-900 rounded px-5 h-14"
+                            className="bg-gray-900 rounded px-7 h-14"
                             type="text"
                             placeholder="Seu nome completo"
                             onChange={event => setName(event.target.value)}
                         />
-                        <input
-                            className="bg-gray-900 rounded px-5 h-14"
-                            type="email"
-                            placeholder="Digite seu email"
-                            onChange={event => setEmail(event.target.value)}
-                        />
-
                         <button
                             type="submit"
                             disabled={loading}
-                            className="mt-4 bg-green-500 uppercase py-4 rounded font-bold text-sm hover:bg-green-700 transition-colors disabled:opacity-50"
+                            className="mt-4 bg-blue-800 uppercase py-4 rounded font-bold text-sm hover:bg-blue-900 transition-colors disabled:opacity-50"
                         >
                            Inscrever-Se     
                         </button>
-
-
                     </form>
                 </div>
-
-
             </div>
 
             <img src="/src/Assets/code.png" className="mt-10" alt="" />

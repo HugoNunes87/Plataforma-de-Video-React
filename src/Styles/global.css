@@ -163,6 +163,10 @@ body {
         text-align: center;
         padding: 2rem;
     }
+    .form {
+        margin-top: 30px;
+        max-width: 414px
+    }
 }
 
 @media (max-width: 590px) {

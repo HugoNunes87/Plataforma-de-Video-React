@@ -1132,6 +1132,406 @@ export type ConnectPositionInput = {
   start?: InputMaybe<Scalars['Boolean']>;
 };
 
+export type Discord = Node & {
+  __typename?: 'Discord';
+  /** The time the document was created */
+  createdAt: Scalars['DateTime'];
+  /** User that created this document */
+  createdBy?: Maybe<User>;
+  /** Get the document in other stages */
+  documentInStages: Array<Discord>;
+  /** List of Discord versions */
+  history: Array<Version>;
+  /** The unique identifier */
+  id: Scalars['ID'];
+  /** The time the document was published. Null on documents in draft stage. */
+  publishedAt?: Maybe<Scalars['DateTime']>;
+  /** User that last published this document */
+  publishedBy?: Maybe<User>;
+  scheduledIn: Array<ScheduledOperation>;
+  /** System stage field */
+  stage: Stage;
+  /** The time the document was updated */
+  updatedAt: Scalars['DateTime'];
+  /** User that last updated this document */
+  updatedBy?: Maybe<User>;
+  url: Scalars['String'];
+};
+
+
+export type DiscordCreatedByArgs = {
+  locales?: InputMaybe<Array<Locale>>;
+};
+
+
+export type DiscordDocumentInStagesArgs = {
+  includeCurrent?: Scalars['Boolean'];
+  inheritLocale?: Scalars['Boolean'];
+  stages?: Array<Stage>;
+};
+
+
+export type DiscordHistoryArgs = {
+  limit?: Scalars['Int'];
+  skip?: Scalars['Int'];
+  stageOverride?: InputMaybe<Stage>;
+};
+
+
+export type DiscordPublishedByArgs = {
+  locales?: InputMaybe<Array<Locale>>;
+};
+
+
+export type DiscordScheduledInArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  locales?: InputMaybe<Array<Locale>>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<ScheduledOperationWhereInput>;
+};
+
+
+export type DiscordUpdatedByArgs = {
+  locales?: InputMaybe<Array<Locale>>;
+};
+
+export type DiscordConnectInput = {
+  /** Allow to specify document position in list of connected documents, will default to appending at end of list */
+  position?: InputMaybe<ConnectPositionInput>;
+  /** Document to connect */
+  where: DiscordWhereUniqueInput;
+};
+
+/** A connection to a list of items. */
+export type DiscordConnection = {
+  __typename?: 'DiscordConnection';
+  aggregate: Aggregate;
+  /** A list of edges. */
+  edges: Array<DiscordEdge>;
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+};
+
+export type DiscordCreateInput = {
+  createdAt?: InputMaybe<Scalars['DateTime']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']>;
+  url: Scalars['String'];
+};
+
+export type DiscordCreateManyInlineInput = {
+  /** Connect multiple existing Discord documents */
+  connect?: InputMaybe<Array<DiscordWhereUniqueInput>>;
+  /** Create and connect multiple existing Discord documents */
+  create?: InputMaybe<Array<DiscordCreateInput>>;
+};
+
+export type DiscordCreateOneInlineInput = {
+  /** Connect one existing Discord document */
+  connect?: InputMaybe<DiscordWhereUniqueInput>;
+  /** Create and connect one Discord document */
+  create?: InputMaybe<DiscordCreateInput>;
+};
+
+/** An edge in a connection. */
+export type DiscordEdge = {
+  __typename?: 'DiscordEdge';
+  /** A cursor for use in pagination. */
+  cursor: Scalars['String'];
+  /** The item at the end of the edge. */
+  node: Discord;
+};
+
+/** Identifies documents */
+export type DiscordManyWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: InputMaybe<Array<DiscordWhereInput>>;
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: InputMaybe<Array<DiscordWhereInput>>;
+  /** Logical OR on all given filters. */
+  OR?: InputMaybe<Array<DiscordWhereInput>>;
+  /** Contains search across all appropriate fields. */
+  _search?: InputMaybe<Scalars['String']>;
+  createdAt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than the given value. */
+  createdAt_gt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than or equal the given value. */
+  createdAt_gte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are contained in given list. */
+  createdAt_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  /** All values less than the given value. */
+  createdAt_lt?: InputMaybe<Scalars['DateTime']>;
+  /** All values less than or equal the given value. */
+  createdAt_lte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not equal to given value. */
+  createdAt_not?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not contained in given list. */
+  createdAt_not_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  createdBy?: InputMaybe<UserWhereInput>;
+  id?: InputMaybe<Scalars['ID']>;
+  /** All values containing the given string. */
+  id_contains?: InputMaybe<Scalars['ID']>;
+  /** All values ending with the given string. */
+  id_ends_with?: InputMaybe<Scalars['ID']>;
+  /** All values that are contained in given list. */
+  id_in?: InputMaybe<Array<Scalars['ID']>>;
+  /** All values that are not equal to given value. */
+  id_not?: InputMaybe<Scalars['ID']>;
+  /** All values not containing the given string. */
+  id_not_contains?: InputMaybe<Scalars['ID']>;
+  /** All values not ending with the given string */
+  id_not_ends_with?: InputMaybe<Scalars['ID']>;
+  /** All values that are not contained in given list. */
+  id_not_in?: InputMaybe<Array<Scalars['ID']>>;
+  /** All values not starting with the given string. */
+  id_not_starts_with?: InputMaybe<Scalars['ID']>;
+  /** All values starting with the given string. */
+  id_starts_with?: InputMaybe<Scalars['ID']>;
+  publishedAt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than the given value. */
+  publishedAt_gt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than or equal the given value. */
+  publishedAt_gte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are contained in given list. */
+  publishedAt_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  /** All values less than the given value. */
+  publishedAt_lt?: InputMaybe<Scalars['DateTime']>;
+  /** All values less than or equal the given value. */
+  publishedAt_lte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not equal to given value. */
+  publishedAt_not?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not contained in given list. */
+  publishedAt_not_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  publishedBy?: InputMaybe<UserWhereInput>;
+  scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
+  scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
+  scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
+  updatedAt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than the given value. */
+  updatedAt_gt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than or equal the given value. */
+  updatedAt_gte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are contained in given list. */
+  updatedAt_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  /** All values less than the given value. */
+  updatedAt_lt?: InputMaybe<Scalars['DateTime']>;
+  /** All values less than or equal the given value. */
+  updatedAt_lte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not equal to given value. */
+  updatedAt_not?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not contained in given list. */
+  updatedAt_not_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  updatedBy?: InputMaybe<UserWhereInput>;
+  url?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  url_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  url_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  url_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  url_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  url_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  url_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  url_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  url_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  url_starts_with?: InputMaybe<Scalars['String']>;
+};
+
+export enum DiscordOrderByInput {
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  PublishedAtAsc = 'publishedAt_ASC',
+  PublishedAtDesc = 'publishedAt_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC',
+  UrlAsc = 'url_ASC',
+  UrlDesc = 'url_DESC'
+}
+
+export type DiscordUpdateInput = {
+  url?: InputMaybe<Scalars['String']>;
+};
+
+export type DiscordUpdateManyInlineInput = {
+  /** Connect multiple existing Discord documents */
+  connect?: InputMaybe<Array<DiscordConnectInput>>;
+  /** Create and connect multiple Discord documents */
+  create?: InputMaybe<Array<DiscordCreateInput>>;
+  /** Delete multiple Discord documents */
+  delete?: InputMaybe<Array<DiscordWhereUniqueInput>>;
+  /** Disconnect multiple Discord documents */
+  disconnect?: InputMaybe<Array<DiscordWhereUniqueInput>>;
+  /** Override currently-connected documents with multiple existing Discord documents */
+  set?: InputMaybe<Array<DiscordWhereUniqueInput>>;
+  /** Update multiple Discord documents */
+  update?: InputMaybe<Array<DiscordUpdateWithNestedWhereUniqueInput>>;
+  /** Upsert multiple Discord documents */
+  upsert?: InputMaybe<Array<DiscordUpsertWithNestedWhereUniqueInput>>;
+};
+
+export type DiscordUpdateManyInput = {
+  url?: InputMaybe<Scalars['String']>;
+};
+
+export type DiscordUpdateManyWithNestedWhereInput = {
+  /** Update many input */
+  data: DiscordUpdateManyInput;
+  /** Document search */
+  where: DiscordWhereInput;
+};
+
+export type DiscordUpdateOneInlineInput = {
+  /** Connect existing Discord document */
+  connect?: InputMaybe<DiscordWhereUniqueInput>;
+  /** Create and connect one Discord document */
+  create?: InputMaybe<DiscordCreateInput>;
+  /** Delete currently connected Discord document */
+  delete?: InputMaybe<Scalars['Boolean']>;
+  /** Disconnect currently connected Discord document */
+  disconnect?: InputMaybe<Scalars['Boolean']>;
+  /** Update single Discord document */
+  update?: InputMaybe<DiscordUpdateWithNestedWhereUniqueInput>;
+  /** Upsert single Discord document */
+  upsert?: InputMaybe<DiscordUpsertWithNestedWhereUniqueInput>;
+};
+
+export type DiscordUpdateWithNestedWhereUniqueInput = {
+  /** Document to update */
+  data: DiscordUpdateInput;
+  /** Unique document search */
+  where: DiscordWhereUniqueInput;
+};
+
+export type DiscordUpsertInput = {
+  /** Create document if it didn't exist */
+  create: DiscordCreateInput;
+  /** Update document if it exists */
+  update: DiscordUpdateInput;
+};
+
+export type DiscordUpsertWithNestedWhereUniqueInput = {
+  /** Upsert data */
+  data: DiscordUpsertInput;
+  /** Unique document search */
+  where: DiscordWhereUniqueInput;
+};
+
+/** Identifies documents */
+export type DiscordWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: InputMaybe<Array<DiscordWhereInput>>;
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: InputMaybe<Array<DiscordWhereInput>>;
+  /** Logical OR on all given filters. */
+  OR?: InputMaybe<Array<DiscordWhereInput>>;
+  /** Contains search across all appropriate fields. */
+  _search?: InputMaybe<Scalars['String']>;
+  createdAt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than the given value. */
+  createdAt_gt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than or equal the given value. */
+  createdAt_gte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are contained in given list. */
+  createdAt_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  /** All values less than the given value. */
+  createdAt_lt?: InputMaybe<Scalars['DateTime']>;
+  /** All values less than or equal the given value. */
+  createdAt_lte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not equal to given value. */
+  createdAt_not?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not contained in given list. */
+  createdAt_not_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  createdBy?: InputMaybe<UserWhereInput>;
+  id?: InputMaybe<Scalars['ID']>;
+  /** All values containing the given string. */
+  id_contains?: InputMaybe<Scalars['ID']>;
+  /** All values ending with the given string. */
+  id_ends_with?: InputMaybe<Scalars['ID']>;
+  /** All values that are contained in given list. */
+  id_in?: InputMaybe<Array<Scalars['ID']>>;
+  /** All values that are not equal to given value. */
+  id_not?: InputMaybe<Scalars['ID']>;
+  /** All values not containing the given string. */
+  id_not_contains?: InputMaybe<Scalars['ID']>;
+  /** All values not ending with the given string */
+  id_not_ends_with?: InputMaybe<Scalars['ID']>;
+  /** All values that are not contained in given list. */
+  id_not_in?: InputMaybe<Array<Scalars['ID']>>;
+  /** All values not starting with the given string. */
+  id_not_starts_with?: InputMaybe<Scalars['ID']>;
+  /** All values starting with the given string. */
+  id_starts_with?: InputMaybe<Scalars['ID']>;
+  publishedAt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than the given value. */
+  publishedAt_gt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than or equal the given value. */
+  publishedAt_gte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are contained in given list. */
+  publishedAt_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  /** All values less than the given value. */
+  publishedAt_lt?: InputMaybe<Scalars['DateTime']>;
+  /** All values less than or equal the given value. */
+  publishedAt_lte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not equal to given value. */
+  publishedAt_not?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not contained in given list. */
+  publishedAt_not_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  publishedBy?: InputMaybe<UserWhereInput>;
+  scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
+  scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
+  scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
+  updatedAt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than the given value. */
+  updatedAt_gt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than or equal the given value. */
+  updatedAt_gte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are contained in given list. */
+  updatedAt_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  /** All values less than the given value. */
+  updatedAt_lt?: InputMaybe<Scalars['DateTime']>;
+  /** All values less than or equal the given value. */
+  updatedAt_lte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not equal to given value. */
+  updatedAt_not?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not contained in given list. */
+  updatedAt_not_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  updatedBy?: InputMaybe<UserWhereInput>;
+  url?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  url_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  url_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  url_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  url_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  url_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  url_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  url_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  url_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  url_starts_with?: InputMaybe<Scalars['String']>;
+};
+
+/** References Discord record uniquely */
+export type DiscordWhereUniqueInput = {
+  id?: InputMaybe<Scalars['ID']>;
+};
+
 export enum DocumentFileTypes {
   Doc = 'doc',
   Docx = 'docx',
@@ -1871,6 +2271,8 @@ export type Mutation = {
   createAsset?: Maybe<Asset>;
   /** Create one challenge */
   createChallenge?: Maybe<Challenge>;
+  /** Create one discord */
+  createDiscord?: Maybe<Discord>;
   /** Create one lesson */
   createLesson?: Maybe<Lesson>;
   /** Create one scheduledRelease */
@@ -1883,6 +2285,8 @@ export type Mutation = {
   deleteAsset?: Maybe<Asset>;
   /** Delete one challenge from _all_ existing stages. Returns deleted document. */
   deleteChallenge?: Maybe<Challenge>;
+  /** Delete one discord from _all_ existing stages. Returns deleted document. */
+  deleteDiscord?: Maybe<Discord>;
   /** Delete one lesson from _all_ existing stages. Returns deleted document. */
   deleteLesson?: Maybe<Lesson>;
   /**
@@ -1899,6 +2303,13 @@ export type Mutation = {
   deleteManyChallenges: BatchPayload;
   /** Delete many Challenge documents, return deleted documents */
   deleteManyChallengesConnection: ChallengeConnection;
+  /**
+   * Delete many Discord documents
+   * @deprecated Please use the new paginated many mutation (deleteManyDiscordsConnection)
+   */
+  deleteManyDiscords: BatchPayload;
+  /** Delete many Discord documents, return deleted documents */
+  deleteManyDiscordsConnection: DiscordConnection;
   /**
    * Delete many Lesson documents
    * @deprecated Please use the new paginated many mutation (deleteManyLessonsConnection)
@@ -1932,6 +2343,8 @@ export type Mutation = {
   publishAsset?: Maybe<Asset>;
   /** Publish one challenge */
   publishChallenge?: Maybe<Challenge>;
+  /** Publish one discord */
+  publishDiscord?: Maybe<Discord>;
   /** Publish one lesson */
   publishLesson?: Maybe<Lesson>;
   /**
@@ -1948,6 +2361,13 @@ export type Mutation = {
   publishManyChallenges: BatchPayload;
   /** Publish many Challenge documents */
   publishManyChallengesConnection: ChallengeConnection;
+  /**
+   * Publish many Discord documents
+   * @deprecated Please use the new paginated many mutation (publishManyDiscordsConnection)
+   */
+  publishManyDiscords: BatchPayload;
+  /** Publish many Discord documents */
+  publishManyDiscordsConnection: DiscordConnection;
   /**
    * Publish many Lesson documents
    * @deprecated Please use the new paginated many mutation (publishManyLessonsConnection)
@@ -1977,6 +2397,8 @@ export type Mutation = {
   schedulePublishAsset?: Maybe<Asset>;
   /** Schedule to publish one challenge */
   schedulePublishChallenge?: Maybe<Challenge>;
+  /** Schedule to publish one discord */
+  schedulePublishDiscord?: Maybe<Discord>;
   /** Schedule to publish one lesson */
   schedulePublishLesson?: Maybe<Lesson>;
   /** Schedule to publish one subscriber */
@@ -1987,6 +2409,8 @@ export type Mutation = {
   scheduleUnpublishAsset?: Maybe<Asset>;
   /** Unpublish one challenge from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   scheduleUnpublishChallenge?: Maybe<Challenge>;
+  /** Unpublish one discord from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
+  scheduleUnpublishDiscord?: Maybe<Discord>;
   /** Unpublish one lesson from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   scheduleUnpublishLesson?: Maybe<Lesson>;
   /** Unpublish one subscriber from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
@@ -1997,6 +2421,8 @@ export type Mutation = {
   unpublishAsset?: Maybe<Asset>;
   /** Unpublish one challenge from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   unpublishChallenge?: Maybe<Challenge>;
+  /** Unpublish one discord from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
+  unpublishDiscord?: Maybe<Discord>;
   /** Unpublish one lesson from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   unpublishLesson?: Maybe<Lesson>;
   /**
@@ -2013,6 +2439,13 @@ export type Mutation = {
   unpublishManyChallenges: BatchPayload;
   /** Find many Challenge documents that match criteria in specified stage and unpublish from target stages */
   unpublishManyChallengesConnection: ChallengeConnection;
+  /**
+   * Unpublish many Discord documents
+   * @deprecated Please use the new paginated many mutation (unpublishManyDiscordsConnection)
+   */
+  unpublishManyDiscords: BatchPayload;
+  /** Find many Discord documents that match criteria in specified stage and unpublish from target stages */
+  unpublishManyDiscordsConnection: DiscordConnection;
   /**
    * Unpublish many Lesson documents
    * @deprecated Please use the new paginated many mutation (unpublishManyLessonsConnection)
@@ -2042,6 +2475,8 @@ export type Mutation = {
   updateAsset?: Maybe<Asset>;
   /** Update one challenge */
   updateChallenge?: Maybe<Challenge>;
+  /** Update one discord */
+  updateDiscord?: Maybe<Discord>;
   /** Update one lesson */
   updateLesson?: Maybe<Lesson>;
   /**
@@ -2058,6 +2493,13 @@ export type Mutation = {
   updateManyChallenges: BatchPayload;
   /** Update many Challenge documents */
   updateManyChallengesConnection: ChallengeConnection;
+  /**
+   * Update many discords
+   * @deprecated Please use the new paginated many mutation (updateManyDiscordsConnection)
+   */
+  updateManyDiscords: BatchPayload;
+  /** Update many Discord documents */
+  updateManyDiscordsConnection: DiscordConnection;
   /**
    * Update many lessons
    * @deprecated Please use the new paginated many mutation (updateManyLessonsConnection)
@@ -2089,6 +2531,8 @@ export type Mutation = {
   upsertAsset?: Maybe<Asset>;
   /** Upsert one challenge */
   upsertChallenge?: Maybe<Challenge>;
+  /** Upsert one discord */
+  upsertDiscord?: Maybe<Discord>;
   /** Upsert one lesson */
   upsertLesson?: Maybe<Lesson>;
   /** Upsert one subscriber */
@@ -2105,6 +2549,11 @@ export type MutationCreateAssetArgs = {
 
 export type MutationCreateChallengeArgs = {
   data: ChallengeCreateInput;
+};
+
+
+export type MutationCreateDiscordArgs = {
+  data: DiscordCreateInput;
 };
 
 
@@ -2135,6 +2584,11 @@ export type MutationDeleteAssetArgs = {
 
 export type MutationDeleteChallengeArgs = {
   where: ChallengeWhereUniqueInput;
+};
+
+
+export type MutationDeleteDiscordArgs = {
+  where: DiscordWhereUniqueInput;
 };
 
 
@@ -2170,6 +2624,21 @@ export type MutationDeleteManyChallengesConnectionArgs = {
   last?: InputMaybe<Scalars['Int']>;
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<ChallengeManyWhereInput>;
+};
+
+
+export type MutationDeleteManyDiscordsArgs = {
+  where?: InputMaybe<DiscordManyWhereInput>;
+};
+
+
+export type MutationDeleteManyDiscordsConnectionArgs = {
+  after?: InputMaybe<Scalars['ID']>;
+  before?: InputMaybe<Scalars['ID']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<DiscordManyWhereInput>;
 };
 
 
@@ -2253,6 +2722,12 @@ export type MutationPublishChallengeArgs = {
 };
 
 
+export type MutationPublishDiscordArgs = {
+  to?: Array<Stage>;
+  where: DiscordWhereUniqueInput;
+};
+
+
 export type MutationPublishLessonArgs = {
   to?: Array<Stage>;
   where: LessonWhereUniqueInput;
@@ -2298,6 +2773,24 @@ export type MutationPublishManyChallengesConnectionArgs = {
   skip?: InputMaybe<Scalars['Int']>;
   to?: Array<Stage>;
   where?: InputMaybe<ChallengeManyWhereInput>;
+};
+
+
+export type MutationPublishManyDiscordsArgs = {
+  to?: Array<Stage>;
+  where?: InputMaybe<DiscordManyWhereInput>;
+};
+
+
+export type MutationPublishManyDiscordsConnectionArgs = {
+  after?: InputMaybe<Scalars['ID']>;
+  before?: InputMaybe<Scalars['ID']>;
+  first?: InputMaybe<Scalars['Int']>;
+  from?: InputMaybe<Stage>;
+  last?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  to?: Array<Stage>;
+  where?: InputMaybe<DiscordManyWhereInput>;
 };
 
 
@@ -2386,6 +2879,14 @@ export type MutationSchedulePublishChallengeArgs = {
 };
 
 
+export type MutationSchedulePublishDiscordArgs = {
+  releaseAt?: InputMaybe<Scalars['DateTime']>;
+  releaseId?: InputMaybe<Scalars['String']>;
+  to?: Array<Stage>;
+  where: DiscordWhereUniqueInput;
+};
+
+
 export type MutationSchedulePublishLessonArgs = {
   releaseAt?: InputMaybe<Scalars['DateTime']>;
   releaseId?: InputMaybe<Scalars['String']>;
@@ -2428,6 +2929,14 @@ export type MutationScheduleUnpublishChallengeArgs = {
 };
 
 
+export type MutationScheduleUnpublishDiscordArgs = {
+  from?: Array<Stage>;
+  releaseAt?: InputMaybe<Scalars['DateTime']>;
+  releaseId?: InputMaybe<Scalars['String']>;
+  where: DiscordWhereUniqueInput;
+};
+
+
 export type MutationScheduleUnpublishLessonArgs = {
   from?: Array<Stage>;
   releaseAt?: InputMaybe<Scalars['DateTime']>;
@@ -2463,6 +2972,12 @@ export type MutationUnpublishAssetArgs = {
 export type MutationUnpublishChallengeArgs = {
   from?: Array<Stage>;
   where: ChallengeWhereUniqueInput;
+};
+
+
+export type MutationUnpublishDiscordArgs = {
+  from?: Array<Stage>;
+  where: DiscordWhereUniqueInput;
 };
 
 
@@ -2509,6 +3024,24 @@ export type MutationUnpublishManyChallengesConnectionArgs = {
   skip?: InputMaybe<Scalars['Int']>;
   stage?: InputMaybe<Stage>;
   where?: InputMaybe<ChallengeManyWhereInput>;
+};
+
+
+export type MutationUnpublishManyDiscordsArgs = {
+  from?: Array<Stage>;
+  where?: InputMaybe<DiscordManyWhereInput>;
+};
+
+
+export type MutationUnpublishManyDiscordsConnectionArgs = {
+  after?: InputMaybe<Scalars['ID']>;
+  before?: InputMaybe<Scalars['ID']>;
+  first?: InputMaybe<Scalars['Int']>;
+  from?: Array<Stage>;
+  last?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  stage?: InputMaybe<Stage>;
+  where?: InputMaybe<DiscordManyWhereInput>;
 };
 
 
@@ -2590,6 +3123,12 @@ export type MutationUpdateChallengeArgs = {
 };
 
 
+export type MutationUpdateDiscordArgs = {
+  data: DiscordUpdateInput;
+  where: DiscordWhereUniqueInput;
+};
+
+
 export type MutationUpdateLessonArgs = {
   data: LessonUpdateInput;
   where: LessonWhereUniqueInput;
@@ -2627,6 +3166,23 @@ export type MutationUpdateManyChallengesConnectionArgs = {
   last?: InputMaybe<Scalars['Int']>;
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<ChallengeManyWhereInput>;
+};
+
+
+export type MutationUpdateManyDiscordsArgs = {
+  data: DiscordUpdateManyInput;
+  where?: InputMaybe<DiscordManyWhereInput>;
+};
+
+
+export type MutationUpdateManyDiscordsConnectionArgs = {
+  after?: InputMaybe<Scalars['ID']>;
+  before?: InputMaybe<Scalars['ID']>;
+  data: DiscordUpdateManyInput;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<DiscordManyWhereInput>;
 };
 
 
@@ -2711,6 +3267,12 @@ export type MutationUpsertChallengeArgs = {
 };
 
 
+export type MutationUpsertDiscordArgs = {
+  upsert: DiscordUpsertInput;
+  where: DiscordWhereUniqueInput;
+};
+
+
 export type MutationUpsertLessonArgs = {
   upsert: LessonUpsertInput;
   where: LessonWhereUniqueInput;
@@ -2776,6 +3338,14 @@ export type Query = {
   challenges: Array<Challenge>;
   /** Retrieve multiple challenges using the Relay connection interface */
   challengesConnection: ChallengeConnection;
+  /** Retrieve a single discord */
+  discord?: Maybe<Discord>;
+  /** Retrieve document version */
+  discordVersion?: Maybe<DocumentVersion>;
+  /** Retrieve multiple discords */
+  discords: Array<Discord>;
+  /** Retrieve multiple discords using the Relay connection interface */
+  discordsConnection: DiscordConnection;
   /** Retrieve a single lesson */
   lesson?: Maybe<Lesson>;
   /** Retrieve document version */
@@ -2896,6 +3466,44 @@ export type QueryChallengesConnectionArgs = {
   skip?: InputMaybe<Scalars['Int']>;
   stage?: Stage;
   where?: InputMaybe<ChallengeWhereInput>;
+};
+
+
+export type QueryDiscordArgs = {
+  locales?: Array<Locale>;
+  stage?: Stage;
+  where: DiscordWhereUniqueInput;
+};
+
+
+export type QueryDiscordVersionArgs = {
+  where: VersionWhereInput;
+};
+
+
+export type QueryDiscordsArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  locales?: Array<Locale>;
+  orderBy?: InputMaybe<DiscordOrderByInput>;
+  skip?: InputMaybe<Scalars['Int']>;
+  stage?: Stage;
+  where?: InputMaybe<DiscordWhereInput>;
+};
+
+
+export type QueryDiscordsConnectionArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  locales?: Array<Locale>;
+  orderBy?: InputMaybe<DiscordOrderByInput>;
+  skip?: InputMaybe<Scalars['Int']>;
+  stage?: Stage;
+  where?: InputMaybe<DiscordWhereInput>;
 };
 
 
@@ -3225,7 +3833,7 @@ export type ScheduledOperationUpdatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
 
-export type ScheduledOperationAffectedDocument = Asset | Challenge | Lesson | Subscriber | Teacher;
+export type ScheduledOperationAffectedDocument = Asset | Challenge | Discord | Lesson | Subscriber | Teacher;
 
 export type ScheduledOperationConnectInput = {
   /** Allow to specify document position in list of connected documents, will default to appending at end of list */
@@ -4152,7 +4760,6 @@ export type Subscriber = Node & {
   createdBy?: Maybe<User>;
   /** Get the document in other stages */
   documentInStages: Array<Subscriber>;
-  email: Scalars['String'];
   /** List of Subscriber versions */
   history: Array<Version>;
   /** The unique identifier */
@@ -4230,7 +4837,6 @@ export type SubscriberConnection = {
 
 export type SubscriberCreateInput = {
   createdAt?: InputMaybe<Scalars['DateTime']>;
-  email: Scalars['String'];
   name: Scalars['String'];
   updatedAt?: InputMaybe<Scalars['DateTime']>;
 };
@@ -4284,25 +4890,6 @@ export type SubscriberManyWhereInput = {
   /** All values that are not contained in given list. */
   createdAt_not_in?: InputMaybe<Array<Scalars['DateTime']>>;
   createdBy?: InputMaybe<UserWhereInput>;
-  email?: InputMaybe<Scalars['String']>;
-  /** All values containing the given string. */
-  email_contains?: InputMaybe<Scalars['String']>;
-  /** All values ending with the given string. */
-  email_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are contained in given list. */
-  email_in?: InputMaybe<Array<Scalars['String']>>;
-  /** All values that are not equal to given value. */
-  email_not?: InputMaybe<Scalars['String']>;
-  /** All values not containing the given string. */
-  email_not_contains?: InputMaybe<Scalars['String']>;
-  /** All values not ending with the given string */
-  email_not_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are not contained in given list. */
-  email_not_in?: InputMaybe<Array<Scalars['String']>>;
-  /** All values not starting with the given string. */
-  email_not_starts_with?: InputMaybe<Scalars['String']>;
-  /** All values starting with the given string. */
-  email_starts_with?: InputMaybe<Scalars['String']>;
   id?: InputMaybe<Scalars['ID']>;
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars['ID']>;
@@ -4381,8 +4968,6 @@ export type SubscriberManyWhereInput = {
 export enum SubscriberOrderByInput {
   CreatedAtAsc = 'createdAt_ASC',
   CreatedAtDesc = 'createdAt_DESC',
-  EmailAsc = 'email_ASC',
-  EmailDesc = 'email_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
   NameAsc = 'name_ASC',
@@ -4394,7 +4979,6 @@ export enum SubscriberOrderByInput {
 }
 
 export type SubscriberUpdateInput = {
-  email?: InputMaybe<Scalars['String']>;
   name?: InputMaybe<Scalars['String']>;
 };
 
@@ -4488,25 +5072,6 @@ export type SubscriberWhereInput = {
   /** All values that are not contained in given list. */
   createdAt_not_in?: InputMaybe<Array<Scalars['DateTime']>>;
   createdBy?: InputMaybe<UserWhereInput>;
-  email?: InputMaybe<Scalars['String']>;
-  /** All values containing the given string. */
-  email_contains?: InputMaybe<Scalars['String']>;
-  /** All values ending with the given string. */
-  email_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are contained in given list. */
-  email_in?: InputMaybe<Array<Scalars['String']>>;
-  /** All values that are not equal to given value. */
-  email_not?: InputMaybe<Scalars['String']>;
-  /** All values not containing the given string. */
-  email_not_contains?: InputMaybe<Scalars['String']>;
-  /** All values not ending with the given string */
-  email_not_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are not contained in given list. */
-  email_not_in?: InputMaybe<Array<Scalars['String']>>;
-  /** All values not starting with the given string. */
-  email_not_starts_with?: InputMaybe<Scalars['String']>;
-  /** All values starting with the given string. */
-  email_starts_with?: InputMaybe<Scalars['String']>;
   id?: InputMaybe<Scalars['ID']>;
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars['ID']>;
@@ -4584,7 +5149,6 @@ export type SubscriberWhereInput = {
 
 /** References Subscriber record uniquely */
 export type SubscriberWhereUniqueInput = {
-  email?: InputMaybe<Scalars['String']>;
   id?: InputMaybe<Scalars['ID']>;
 };
 
@@ -5570,7 +6134,6 @@ export enum _SystemDateTimeFieldVariation {
 
 export type CreateSubscriberMutationVariables = Exact<{
   name: Scalars['String'];
-  email: Scalars['String'];
 }>;
 
 
@@ -5581,7 +6144,7 @@ export type GetLessonBySlugQueryVariables = Exact<{
 }>;
 
 
-export type GetLessonBySlugQuery = { __typename?: 'Query', lesson?: { __typename?: 'Lesson', title: string, videoId: string, description?: string | null, teacher?: { __typename?: 'Teacher', bio: string, avatarURL: string, name: string } | null } | null };
+export type GetLessonBySlugQuery = { __typename?: 'Query', lesson?: { __typename?: 'Lesson', title: string, videoId: string, description?: string | null, teacher?: { __typename?: 'Teacher', bio: string, avatarURL: string, name: string } | null, challenge?: { __typename?: 'Challenge', url: string } | null } | null };
 
 export type GetLessonsQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -5590,8 +6153,8 @@ export type GetLessonsQuery = { __typename?: 'Query', lessons: Array<{ __typenam
 
 
 export const CreateSubscriberDocument = gql`
-    mutation CreateSubscriber($name: String!, $email: String!) {
-  createSubscriber(data: {name: $name, email: $email}) {
+    mutation CreateSubscriber($name: String!) {
+  createSubscriber(data: {name: $name}) {
     id
   }
 }
@@ -5612,7 +6175,6 @@ export type CreateSubscriberMutationFn = Apollo.MutationFunction<CreateSubscribe
  * const [createSubscriberMutation, { data, loading, error }] = useCreateSubscriberMutation({
  *   variables: {
  *      name: // value for 'name'
- *      email: // value for 'email'
  *   },
  * });
  */
@@ -5633,6 +6195,9 @@ export const GetLessonBySlugDocument = gql`
       bio
       avatarURL
       name
+    }
+    challenge {
+      url
     }
   }
 }

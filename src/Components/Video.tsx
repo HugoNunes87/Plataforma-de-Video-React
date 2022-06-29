@@ -1,5 +1,5 @@
 import { DefaultUi, Player, Vimeo} from "@vime/react";
-import { CaretRight, DiscordLogo, FileArrowDown, Lightning } from "phosphor-react";
+import { CaretRight, DiscordLogo, FileArrowDown, LinkedinLogo } from "phosphor-react";
 
 import '@vime/core/themes/default.css';
 import { useGetLessonBySlugQuery } from "../graphql/generated";
@@ -17,9 +17,6 @@ export function Video(props: VideoProps) {
         }
         
     })
-    
-
-    console.log(data)
 
     if (!data || !data.lesson) {
         return (
@@ -52,7 +49,7 @@ export function Video(props: VideoProps) {
                         {data.lesson.teacher && (
                             <div className="flex items-center gap-4 mt-6">
                                 <img
-                                    className="h-16 w-16 rounded-full border-2 border-blue-500"
+                                    className="h-16 w-16 rounded-full border-2 border-blue-600"
                                     src={data.lesson.teacher.avatarURL}
                                     alt=""
                                 />
@@ -66,21 +63,21 @@ export function Video(props: VideoProps) {
                     </div>
 
                     <div className="flex flex-col gap-4">
-                        <a href="" className="p-4 text-sm bg-green-500 flex items-center rounded font-bold  uppercase gap-2 justify-center hover:bg-green-700 transition-colors">
+                        <a href="" className="p-4 text-sm bg-blue-800 flex items-center rounded font-bold  uppercase gap-2 justify-center hover:bg-blue-900 transition-colors">
                             <DiscordLogo size={24} />
-                            Cominidade do Discord
+                            entre em contato
                         </a>
 
-                        <a href="" className="p-4 text-sm border border-blue-500 flex  text-blue-500 items-center rounded font-bold  uppercase gap-2 justify-center hover:bg-blue-500 hover:text-gray-900 transition-colors">
-                            <Lightning size={24} />
-                            Acesse o desafio
+                        <a href={data.lesson.challenge?.url} className="p-4 text-sm border border-blue-500 flex  text-blue-500 items-center rounded font-bold  uppercase gap-2 justify-center hover:bg-blue-500 hover:text-gray-900 transition-colors">
+                            <LinkedinLogo size={24} />
+                            linkedin
                         </a>
                     </div>
                 </div>
 
                 <div className="gap-8 mt-20 grid grid-cols-2 cards">
                     <a href="" className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors">
-                        <div className="bg-green-700 h-full p-6 flex items-center">
+                        <div className="bg-blue-800 h-full p-6 flex items-center">
                             <FileArrowDown size={40} />
                         </div>
 
@@ -99,7 +96,7 @@ export function Video(props: VideoProps) {
                     </a>
 
                     <a href="" className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors">
-                        <div className="bg-green-700 h-full p-6 flex items-center">
+                        <div className="bg-blue-800 h-full p-6 flex items-center">
                             <FileArrowDown size={40} />
                         </div>
 
