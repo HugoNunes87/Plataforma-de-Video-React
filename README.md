@@ -25,8 +25,7 @@ Projeto de uma plataforma de video utilizando ReactJS, GraphQL e GraphCMS
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) e/ou [Yarn](https://yarnpkg.com/). 
-Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/) e 
-instalado [MySQl::Workbench](https://www.mysql.com/products/workbench/).
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/).
 
 
 
