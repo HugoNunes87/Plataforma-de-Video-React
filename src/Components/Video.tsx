@@ -105,7 +105,7 @@ export function Video(props: VideoProps) {
                                 Wallpapers exclusivos
                             </strong>
                             <p className="text-sm text-gray-200 mt-2">
-                                Baixe wallpapers exclusivos do Ignite Lab e personalize a sua máquina
+                                Baixe wallpapers exclusivos e personalize a sua máquina
                             </p>
                         </div>
 
