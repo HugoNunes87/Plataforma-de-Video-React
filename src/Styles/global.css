@@ -7,6 +7,21 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background: #121214;
+    height: 8vh;
+}
+
+main {
+    background-size: cover;
+    height: 92vh;
+}
+
 .nav-list {
     list-style: none;
     display: block;
@@ -37,7 +52,7 @@ body {
     }
     .nav-list {
         padding: 1.5rem;
-        z-index: 2;
+        z-index: 99;
         position: absolute;
         top: 12vh;
         right: 0;
