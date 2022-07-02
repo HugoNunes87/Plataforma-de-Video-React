@@ -28,7 +28,7 @@ export function Home() {
         <div className="flex flex-col min-h-screen bg-blur bg-cover bg-no-repeat items-center">
             <div className="w-full max-w-[1100px] flex items-center justify-between mt-20 mx-auto home">
                 <div className="max-w-[640px] logo">
-                    <Logo/>
+                    
                     <h1 className="mt-8 text-[2.4rem] leading-tight title">
                         Bem-Vindo(a) ao meu portifólio com videos de projetos finalizados e em andamento
                     </h1>
