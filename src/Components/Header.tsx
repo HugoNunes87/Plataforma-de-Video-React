@@ -24,20 +24,20 @@ export function Header() {
                     <div className="line2"></div>
                     <div className="line3"></div>
                 </div>
-                
                 <div className={active ? 'nav-list active' : 'nav-list'} onClick={ToggleMode}>
-                    {data?.lessons.map(lesson => {
-                        return (
-                            <Lesson
-                                key={lesson.id}
-                                title={lesson.title}
-                                slug={lesson.slug}
-                                availableAt={new Date(lesson.availableAt)}
-                                type={lesson.lessonType}
-                            />
-                        )
-                    })}
-                </div>
+                        {data?.lessons.map(lesson => {
+                            return (
+                                <Lesson
+                                    key={lesson.id}
+                                    title={lesson.title}
+                                    slug={lesson.slug}
+                                    availableAt={new Date(lesson.availableAt)}
+                                    type={lesson.lessonType}
+                                />
+                            )
+                        })}
+                    </div>
+
             </nav>
         </header>
     )

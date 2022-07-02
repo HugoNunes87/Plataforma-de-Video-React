@@ -56,7 +56,7 @@ main {
         position: absolute;
         top: 12vh;
         right: 0;
-        height: 92vh;
+        height: 100vh;
         background: #121214;
         flex-direction: column;
         align-items: center;
