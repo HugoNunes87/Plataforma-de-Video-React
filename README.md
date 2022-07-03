@@ -49,6 +49,7 @@ $ yarn ou npm start run dev
 ### Front-end
 * ReactJS
 * tailwindcss
+* Vite
 ### Back-end
 * GraphCMS
 * GraphQL
