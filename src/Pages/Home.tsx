@@ -44,6 +44,7 @@ export function Home() {
                             type="text"
                             placeholder="Seu nome completo"
                             onChange={event => setName(event.target.value)}
+                            required
                         />
                         <button
                             type="submit"
