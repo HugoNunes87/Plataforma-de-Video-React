@@ -63,7 +63,7 @@ export function Video(props: VideoProps) {
                     </div>
 
                     <div className="flex flex-col gap-4">
-                        <a href="" className="p-4 text-sm bg-blue-800 flex items-center rounded font-bold  uppercase gap-2 justify-center hover:bg-blue-900 transition-colors">
+                        <a href="https://discord.com/" className="p-4 text-sm bg-blue-800 flex items-center rounded font-bold  uppercase gap-2 justify-center hover:bg-blue-900 transition-colors">
                             <DiscordLogo size={24} />
                             entre em contato
                         </a>
