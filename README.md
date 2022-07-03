@@ -13,7 +13,7 @@
 
 ## 💻 Projeto
 
-Projeto de uma plataforma de video utilizando ReactJS, GraphQL e GraphCMS
+Projeto de uma plataforma de video utilizando ReactJS, Vite, GraphQL e GraphCMS
   
  ### ✅ Demonstração
  <p align="center">
@@ -49,6 +49,7 @@ $ yarn ou npm start run dev
 ### Front-end
 * ReactJS
 * tailwindcss
+* Vite
 ### Back-end
 * GraphCMS
 * GraphQL
