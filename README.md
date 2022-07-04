@@ -1,5 +1,5 @@
 <h1 align="center">
-    PLATAFORMA DE VIDEO COM REACTJS
+    PLATAFORMA DE VIDEO REACTJS
 </h1>
 <h3 align="center"> 
   🚧  Em Andamento...  🚧
