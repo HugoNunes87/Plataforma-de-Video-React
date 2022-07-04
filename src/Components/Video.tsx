@@ -63,12 +63,12 @@ export function Video(props: VideoProps) {
                     </div>
 
                     <div className="flex flex-col gap-4">
-                        <a href="https://discord.com/" className="p-4 text-sm bg-blue-800 flex items-center rounded font-bold  uppercase gap-2 justify-center hover:bg-blue-900 transition-colors">
+                        <a href="https://discord.com/" target="_blank" className="p-4 text-sm bg-blue-800 flex items-center rounded font-bold  uppercase gap-2 justify-center hover:bg-blue-900 transition-colors">
                             <DiscordLogo size={24} />
                             entre em contato
                         </a>
 
-                        <a href={data.lesson.challenge?.url} className="p-4 text-sm border border-blue-500 flex  text-blue-500 items-center rounded font-bold  uppercase gap-2 justify-center hover:bg-blue-500 hover:text-gray-900 transition-colors">
+                        <a href={data.lesson.challenge?.url} target="_blank" className="p-4 text-sm border border-blue-500 flex  text-blue-500 items-center rounded font-bold  uppercase gap-2 justify-center hover:bg-blue-500 hover:text-gray-900 transition-colors">
                             <LinkedinLogo size={24} />
                             linkedin
                         </a>
