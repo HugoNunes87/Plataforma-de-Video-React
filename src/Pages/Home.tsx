@@ -51,7 +51,7 @@ export function Home() {
                             disabled={loading}
                             className="mt-4 bg-blue-800 uppercase py-4 rounded font-bold text-sm hover:bg-blue-900 transition-colors disabled:opacity-50"
                         >
-                           Inscrever-Se     
+                           Entrar    
                         </button>
                     </form>
                 </div>
