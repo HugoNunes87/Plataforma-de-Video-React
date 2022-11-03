@@ -1,4 +1,4 @@
-import { DefaultUi, Player, Vimeo} from "@vime/react";
+import { DefaultUi, Player, Youtube} from "@vime/react";
 import { CaretRight, DiscordLogo, FileArrowDown, LinkedinLogo } from "phosphor-react";
 
 import '@vime/core/themes/default.css';
@@ -31,7 +31,7 @@ export function Video(props: VideoProps) {
             <div className="bg-black flex justify-center">
                 <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video">
                     <Player>
-                        <Vimeo videoId={data.lesson.videoId} />
+                        <Youtube videoId={data.lesson.videoId} />
                         <DefaultUi />
                     </Player>
                 </div>
