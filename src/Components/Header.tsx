@@ -24,6 +24,7 @@ export function Header() {
                     <div className="line2"></div>
                     <div className="line3"></div>
                 </div>
+                
                 <aside className={active ? 'nav-list active' : 'nav-list'} onClick={ToggleMode}>
                     {data?.lessons.map(lesson => {
                         return (
