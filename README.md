@@ -17,7 +17,7 @@ Projeto de uma plataforma de video utilizando ReactJS, Vite, GraphQL e GraphCMS
   
  ### ✅ Demonstração
 <p align="center">
-   <img src=".github/home.png"> 
+   <img src=".github/home.png">
 </p>
 
 
